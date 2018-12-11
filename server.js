@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use('/public', express.static(process.cwd() + '/public'));
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/shortUrl', { useNewUrlParser: true });
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/shortUrl', { useNewUrlParser: true });
 
 app.get('/', function(req, res){
     res.sendFile(process.cwd() + '/views/index.html');
